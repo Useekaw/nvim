@@ -18,7 +18,7 @@ return {
         javascript = { "oxfmt" },
         json = { "oxfmt" },
         lua = { "stylua" },
-        markdown = { "oxfmt" },
+        markdown = { "markdownlint-cli2" },
         python = { "isort", "ruff_format" },
         sh = { "shfmt" },
         terraform = { "terraform_fmt" },

@@ -1,103 +1,220 @@
-<h1 align="center">My Nvim Configuration</h1>
+<h1 align="center">"My" Nvim Configuration</h1>
+
+**This is a fork**! All credit to [Allaman](https://github.com/Allaman/nvim) for creating this config. I merely adapted it to suite my tools and workflow better.
 
 <div align="center"><p>
     <a href="https://github.com/neovim/neovim">
-      <img src="https://img.shields.io/badge/Neovim-0.10.0-blueviolet.svg?style=flat-square&logo=Neovim&color=90E59A&logoColor=white" alt="Neovim"/>
+      <img src="https://img.shields.io/badge/Neovim-blueviolet.svg?style=flat-square&logo=Neovim&color=90E59A&logoColor=white" alt="Neovim"/>
     </a>
-    <a href="https://github.com/Allaman/nvim/pulse">
-      <img src="https://img.shields.io/github/last-commit/Allaman/nvim" alt="Last commit"/>
+    <a href="https://github.com/Useekaw/nvim/pulse">
+      <img src="https://img.shields.io/github/last-commit/Useekaw/nvim" alt="Last commit"/>
     </a>
-    <a href="https://github.com/Allaman/nvim/issues">
-      <img src="https://img.shields.io/github/issues/Allaman/nvim.svg?style=flat-square&label=Issues&color=F05F40" alt="Github issues"/>
-    </a>
-    <a href="https://github.com/Allaman/nvim/actions/workflows/ci.yml">
-      <img src="https://github.com/Allaman/nvim/actions/workflows/ci.yml/badge.svg" alt="CI Status"/>
-    </a>
-    <a href="https://github.com/Allaman/nvim/blob/main/LICENSE">
-      <img src="https://img.shields.io/github/license/Allaman/nvim?style=flat-square&logo=MIT&label=License" alt="License"/>
+    <a href="https://github.com/Useekaw/nvim/blob/main/LICENSE">
+      <img src="https://img.shields.io/github/license/Useekaw/nvim?style=flat-square&logo=MIT&label=License" alt="License"/>
     </a>
 </p>
 
 </div>
 
-![Sewjp.png](https://s13.gifyu.com/images/Sewjp.png)
+## Keybindings
 
-![Sewj4.png](https://s13.gifyu.com/images/Sewj4.png)
+`<leader>` is `<Space>`, `<localleader>` is `,`. Groups below mirror the
+which-key groups defined in `lua/vnext/plugins/which-key.lua`. Run
+`<leader>sk` any time to fuzzy-search all active keymaps.
 
-**README WIP**
+### General
 
-**Terminal**: [ghostty](https://s7.gifyu.com/images/SXOsw.png)
+| Key | Mode | Action |
+| --- | --- | --- |
+| `j` / `k` | n | Move by display line (respects wrap) |
+| `<` / `>` | v | Indent/dedent, keep selection |
+| `Q` | n | `q` (repeat last `:` command) |
+| `<esc>` | i, n | Clear search highlight |
+| `<CR>` | n | Toggle fold under cursor (or default `<CR>` in quickfix) |
+| `<leader>z` | n | Cycle fold levels |
+| `<leader>q` | n | Close window |
+| `<leader>uI` | n | Inspect Treesitter tree |
+| `S` | n, x, o | Flash jump |
+| `SS` | n, o, x | Flash Treesitter jump |
+| `<c-s>` | c | Toggle Flash search |
+| `<c-space>` | n, o, x | Treesitter incremental selection |
+| `s` | n | Substitute operator |
+| `ss` | x | Substitute selection |
+| `ga` / `gA` | v | Align / Align with preview |
+| `-` | n | Open Oil (float file explorer) |
+| `<TAB>` / `<S-TAB>` | n | Next / previous buffer |
+| `<C-h/j/k/l>` | n | Move between window splits (tmux-aware) |
+| `<c-n>` | n | Toggle terminal |
+| `<C-n>` | t | Close terminal |
+| `<C-l>` | i | Jump over next closing bracket/quote |
+| `*` / `#` | n | Jump to next / previous reference under cursor |
 
-**Font**: [Comic Code Ligatures](https://tosche.net/fonts/comic-code)
+### Windows — `<leader>w`
 
-**Neovim Theme**: [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
+| Key | Action |
+| --- | --- |
+| `ws` / `wv` | Horizontal / vertical split |
+| `wT` | Move window to new tab |
+| `wr` / `wR` | Rotate windows down/right / up/left |
+| `wH` / `wJ` / `wK` / `wL` | Move window left/down/up/right |
+| `w=` | Equalize window sizes |
+| `wk` / `wj` | Increase / decrease height |
+| `wh` / `wl` | Increase / decrease width |
 
-## Customization
+### Files — `<leader>f`
 
-⚠️ This is primarily my personal config
+| Key | Action |
+| --- | --- |
+| `ff` | Find files (cwd) |
+| `fr` | Recent files (cwd) |
+| `fg` | Git status files |
+| `fp` | Toggle file explorer |
+| `fn` | New file |
+| `fs` | Save file |
+| `fo` | Open path under cursor (`gf`) |
+| `fR` | Rename current file |
+| `lf` | Open Yazi file manager |
 
-If you want to use my config there is the `./lua/vnext/extra/` folder that is loaded by lazy.nvim. The LazySpecs in this folder are merged with the "default" LazySpecs in the `./lua/vnext/plugins/` folder. Some examples you can do:
+### Search — `<leader>s`
 
-Disable a plugin:
+| Key | Action |
+| --- | --- |
+| `ss` | Grep strings |
+| `sw` | Grep word/selection under cursor |
+| `sh` | Help tags |
+| `sl` | Buffer lines |
+| `si` | Icons |
+| `sL` | Lazy plugin spec |
+| `sz` | Zoxide directories |
+| `sD` | Diagnostics (workspace) |
+| `sd` | Diagnostics (buffer) |
+| `sk` | Keymaps |
+| `sR` | Resume last picker |
+| `sb` | Git branches |
+| `su` | Undo tree |
+| `sT` | Todo comments |
 
-```lua
-return {
-  {
-    "Bekaboo/dropbar.nvim",
-    enabled = false,
-  },
-}
-```
+### Buffers — `<leader>b`
 
-Add new options to a plugin:
+| Key | Action |
+| --- | --- |
+| `bb` | List buffers |
+| `bd` | Delete current buffer |
+| `bD` | Close all but current buffer |
 
-```lua
-return {
-  {
-    "nvim-mini/mini.surround",
-    opts = {
-      search_method = 'nearest',
-    },
-  }
-}
-```
+### Git — `<leader>g`
 
-Overwrite options of a plugin:
+| Key | Action |
+| --- | --- |
+| `gg` | Fugitive status |
+| `gh` | Fugitive maps help |
+| `gH` | Commit history (`GV`) |
+| `gF` | File history (`GV!`) |
+| `gL` | File history in loclist (`GV?`) |
+| `gD` | Open CodeDiff |
+| `gB` | Git blame line |
+| `go` / `gc` | Open / copy git link (n, v) |
+| `gs` / `gS` | Stage hunk / stage buffer |
+| `gu` | Undo stage hunk |
+| `gr` / `gR` | Reset hunk / reset buffer |
+| `gp` | Preview hunk |
+| `gd` | Show deleted (inline) |
+| `gb` | Toggle current-line blame |
+| `gj` / `gk` | Next / previous git hunk (no leader) |
 
-```lua
-return {
-  {
-    "L3MON4D3/LuaSnip",
-    opts = {
-      -- define your own snippets folder
-      snippets_path = { vim.fn.expand("~/mySnips") },
-    },
-  },
-}
-```
+### LSP — `<leader>l`
 
-Change keys of a plugin:
+| Key | Action |
+| --- | --- |
+| `lk` | Hover |
+| `lR` | Rename |
+| `la` | Code action (n, x) |
+| `lD` | Go to declaration |
+| `ld` | Go to definition (picker) |
+| `lr` | References (picker) |
+| `lI` | Implementations (picker) |
+| `lt` | Type definition (picker) |
+| `ls` | Document symbols (picker) |
+| `lS` | Workspace symbols (picker) |
 
-```lua
-return {
-  {
-    "MagicDuck/grug-far.nvim",
-    keys = {
-      -- stylua: ignore start
-      { "<leader>R", hidden = true },
-      { "<leader>RG", "<cmd>GrugFar<cr>", desc = "Open" },
-      { "<leader>Rg", "<cmd>lua require('grug-far').open({ prefills = { paths = vim.fn.expand('%') } })<cr>", desc = "Open (Limit to current file)"},
-      { "<leader>Rw", "<cmd>lua require('grug-far').open({ prefills = { search = vim.fn.expand('<cword>') } })<cr>", desc = "Search word under cursor", },
-      { "<leader>Rs", mode = "v", "<cmd>lua require('grug-far').with_visual_selection({ prefills = { paths = vim.fn.expand('%') } })<cr>", desc = "Search selection", },
-      { "<leader>X", "", desc = "Search & Replace" },
-      { "<leader>XG", "<cmd>GrugFar<cr>", desc = "Open" },
-      { "<leader>Xg", "<cmd>lua require('grug-far').open({ prefills = { paths = vim.fn.expand('%') } })<cr>", desc = "Open (Limit to current file)"},
-      { "<leader>Xw", "<cmd>lua require('grug-far').open({ prefills = { search = vim.fn.expand('<cword>') } })<cr>", desc = "Search word under cursor", },
-      { "<leader>Xs", mode = "v", "<cmd>lua require('grug-far').with_visual_selection({ prefills = { paths = vim.fn.expand('%') } })<cr>", desc = "Search selection", },
-      -- stylua: ignore end
-    },
-  },
-}
-```
+### Diagnostics — `<leader>d`
 
-Check out my [blog post](https://rootknecht.net/blog/debloating-neovim-config/) to learn more about the reasons behind this big change. You can find the previous version in the [v1](https://github.com/Allaman/nvim/tree/v1) branch.
+| Key | Action |
+| --- | --- |
+| `dj` / `dk` | Next / previous diagnostic |
+| `dc` | Show diagnostic in float |
+| `dd` | Send diagnostics to quickfix |
+
+### Toggles — `<leader>t` / `<leader>u`
+
+| Key | Action |
+| --- | --- |
+| `ts` | Spelling |
+| `tF` | Format on save |
+| `to` | Outline panel |
+| `uw` | Wrap |
+| `un` | Relative number |
+| `uC` | Cursorline |
+| `ud` | Diagnostics |
+| `ul` | Line numbers |
+| `uc` | Conceal level |
+| `uh` | Inlay hints |
+| `uD` | Dim inactive code |
+| `ux` | Colorizer |
+| `uq` | Quickfix window |
+| `uZ` / `uz` | Zen mode / zoom |
+
+### HTTP client (`.http`/`.rest` files) — `<leader>H`
+
+| Key | Action |
+| --- | --- |
+| `Hs` | Send request |
+| `Ha` | Send all requests |
+| `Hb` | Open scratchpad |
+
+### AI / Sidekick CLI — `<leader>a`
+
+| Key | Mode | Action |
+| --- | --- | --- |
+| `<c-.>` | n, t, i, x | Toggle Sidekick |
+| `aa` | n | Toggle CLI |
+| `as` | n | Select CLI tool |
+| `ad` | n | Detach CLI session |
+| `at` | n, x | Send "this" |
+| `af` | n | Send file |
+| `av` | x | Send visual selection |
+| `ap` | n, x | Select prompt |
+| `ac` | n | Toggle Claude directly |
+
+### Misc
+
+| Key | Action |
+| --- | --- |
+| `<leader>nn` | Open Noice message history |
+| `<leader>nd` | Dismiss notification |
+| `<leader>rr` | Open search & replace (grug-far) |
+| `<leader>rR` | Search & replace, limited to current file |
+| `<leader>rw` | Search & replace word under cursor |
+| `<leader>rs` (v) | Search & replace selection |
+| `<leader>k...` | Kustomize commands (`yaml` filetype only) |
+
+### Context-specific
+
+| Key | Context | Action |
+| --- | --- | --- |
+| `<leader>x` (n/v) | `lua` files | Source current line / range |
+| `<leader>j` / `<leader>k` | diff mode | Next / previous change |
+| `<leader>co` / `<leader>cp` | diff mode | Obtain / put change |
+| `q` | help, qf, query, man, grug-far | Close window |
+| `<C-h>` | insert mode (LuaSnip) | Cycle snippet choice |
+
+### Completion (insert mode, blink.cmp)
+
+| Key | Action |
+| --- | --- |
+| `<C-space>` | Show completion / documentation |
+| `<C-e>` | Hide completion |
+| `<CR>` | Accept |
+| `<Tab>` / `<S-Tab>` | Next/previous item, or jump snippet |
+| `<C-j>` / `<C-k>` | Next / previous item |
+| `<C-f>` / `<C-b>` | Scroll documentation down / up |
