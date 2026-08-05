@@ -60,7 +60,6 @@ return {
 
   {
     "allaman/kustomize.nvim",
-    dev = true,
     ft = "yaml",
     ---@type KustomizeConfig
     opts = {
@@ -94,7 +93,6 @@ return {
   },
   {
     "allaman/tf.nvim",
-    dev = true,
     ft = "terraform",
     ---@module "tf"
     ---@type tf.ConfigPartial

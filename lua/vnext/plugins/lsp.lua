@@ -2,8 +2,35 @@ return {
   {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      "mason-org/mason.nvim",
+      "mason-org/mason-lspconfig.nvim",
+    },
     opts = {
       servers = {
+        ansiblels = {
+          filetypes = { "yaml.ansible" },
+          settings = {
+            ansible = {
+              ansible = {
+                path = "ansible",
+              },
+              executionEnvironment = {
+                enabled = false,
+              },
+              python = {
+                interpreterPath = "python3",
+              },
+              validation = {
+                enabled = true,
+                lint = {
+                  enabled = true,
+                  path = "ansible-lint",
+                },
+              },
+            },
+          },
+        },
         bashls = {},
         dockerls = {},
         gopls = {

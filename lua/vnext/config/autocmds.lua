@@ -67,3 +67,22 @@ api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     vim.bo.filetype = "dockerfile"
   end,
 })
+
+-- detect ansible yaml files so ansiblels attaches instead of / alongside yamlls
+vim.filetype.add({
+  pattern = {
+    [".*/playbooks/.*%.ya?ml"] = "yaml.ansible",
+    [".*/roles/.*/tasks/.*%.ya?ml"] = "yaml.ansible",
+    [".*/roles/.*/handlers/.*%.ya?ml"] = "yaml.ansible",
+    [".*/group_vars/.*%.ya?ml"] = "yaml.ansible",
+    [".*/host_vars/.*%.ya?ml"] = "yaml.ansible",
+    [".*/inventory/.*%.ya?ml"] = "yaml.ansible",
+    [".*/molecule/.*%.ya?ml"] = "yaml.ansible",
+    [".*playbook.*%.ya?ml"] = "yaml.ansible",
+    ["site%.ya?ml"] = "yaml.ansible",
+    ["requirements%.ya?ml"] = "yaml.ansible",
+  },
+})
+
+-- reuse the yaml treesitter parser for the "yaml.ansible" compound filetype
+vim.treesitter.language.register("yaml", "yaml.ansible")

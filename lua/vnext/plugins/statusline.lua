@@ -83,7 +83,7 @@ return {
       },
     },
     sections = {
-      lualine_a = {}, -- hide mode
+      lualine_a = { "mode" },
       lualine_b = {
         "branch",
         "diff",

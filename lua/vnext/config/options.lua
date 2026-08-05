@@ -4,7 +4,7 @@ vim.g.autoformat = true -- global var for toggling autoformat
 
 -- stylua: ignore start
 o.clipboard      = "unnamedplus"                                   -- keep in sync with the system clipboard
-o.cursorline     = false                                           -- highlight the current line
+o.cursorline     = true                                            -- highlight the current line
 o.dir            = vim.fn.stdpath("data") .. "/swp"                -- swap file directory
 o.expandtab      = true                                            -- use spaces instead of tabs
 o.diffopt        = "internal,filler,closeoff,linematch:60"         -- improve diff visualization
@@ -27,7 +27,8 @@ o.listchars = {                                                    -- define inv
   nbsp = "␣",
 }
 o.mouse          = "nv"                                            -- enable mouse see :h mouse
-o.number         = false
+o.number         = true
+o.relativenumber = true
 o.scrolloff      = 10                                              -- Minimal number of screen lines to keep above and below the cursor
 o.signcolumn     = "yes"                                           -- Always show the signcolumn, otherwise it would shift the text each time
 o.shiftwidth     = 2                                               -- the number of spaces inserted for each indentation
@@ -37,7 +38,7 @@ o.splitbelow     = true                                            -- force all 
 o.splitright     = true                                            -- force all vertical splits to go to the right of current window
 o.tabstop        = 2                                               -- how many columns a tab counts for
 o.timeoutlen     = 300                                             -- time to wait for a mapped sequence to complete (in milliseconds)
-o.ttimeoutlen    = 0                                               -- Time in milliseconds to wait for a key code sequence to complete
+o.ttimeoutlen    = 50                                              -- time (ms) to wait for a key code/terminal escape sequence to complete (0 caused garbled input & wrong cursor shape on startup)
 o.undodir        = vim.fn.stdpath("data") .. "/undodir"            -- set undo directory
 o.undofile       = true                                            -- enable/disable undo file creation
 o.undolevels     = 1000                                            -- number of changes that can be undone
