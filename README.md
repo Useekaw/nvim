@@ -2,17 +2,12 @@
 
 **This is a fork**! All credit to [Allaman](https://github.com/Allaman/nvim) for creating this config. I merely adapted it to suite my tools and workflow better.
 
-<div align="center"><p>
-    <a href="https://github.com/neovim/neovim">
-      <img src="https://img.shields.io/badge/Neovim-blueviolet.svg?style=flat-square&logo=Neovim&color=90E59A&logoColor=white" alt="Neovim"/>
-    </a>
-    <a href="https://github.com/Useekaw/nvim/pulse">
-      <img src="https://img.shields.io/github/last-commit/Useekaw/nvim" alt="Last commit"/>
-    </a>
-    <a href="https://github.com/Useekaw/nvim/blob/main/LICENSE">
-      <img src="https://img.shields.io/github/license/Useekaw/nvim?style=flat-square&logo=MIT&label=License" alt="License"/>
-    </a>
-</p>
+<div align="center">
+
+[![Neovim](https://img.shields.io/badge/Neovim-repo-blue.svg?logo=Neovim&logoColor=white)](https://github.com/neovim/neovim)
+[![Last commit](https://img.shields.io/github/last-commit/Useekaw/nvim?logo=github)](https://github.com/Useekaw/nvim/pulse)
+[![License](https://img.shields.io/github/license/Useekaw/nvim?logo=MIT&label=License)](https://github.com/Useekaw/nvim/blob/main/LICENSE)
+[![Fork](https://img.shields.io/badge/Fork-source-red.svg?logo=git)](https://github.com/Allaman/nvim)
 
 </div>
 
