@@ -11,6 +11,7 @@ return {
         markdown = { "markdownlint-cli2" },
         terraform = { "tflint" },
         yaml = { "yamllint" },
+        ["yaml.ansible"] = { "ansible_lint" },
       },
     },
     config = function(_, opts)
