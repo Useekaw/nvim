@@ -10,7 +10,7 @@ return {
       "neovim/nvim-lspconfig",
     },
     opts = {
-      ensure_installed = { "ansiblels" },
+      ensure_installed = { "ansiblels", "yamlls" },
       -- lsp.lua already handles vim.lsp.config/vim.lsp.enable for every entry
       -- in the `servers` table, so let mason-lspconfig only take care of
       -- installing the binaries and keep enabling centralized there.
