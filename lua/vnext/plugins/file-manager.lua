@@ -7,6 +7,9 @@ return {
     opts = {
       default_file_explorer = false,
       delete_to_trash = true,
+      view_options = {
+        show_hidden = true,
+      },
       float = {
         max_width = 0.75,
         max_height = 0.75,
@@ -33,6 +36,7 @@ return {
       keymaps = {
         show_help = "g?",
       },
+      -- hidden files are shown by default via ~/.config/yazi/yazi.toml (mgr.show_hidden)
     },
   },
 }

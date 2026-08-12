@@ -59,6 +59,7 @@ return {
     explorer = {
       enabled = true,
       replace_netrw = true,
+      hidden = true,
     },
     -- gh ={}, just to keep in mind that this exists :)
     indent = {
@@ -77,6 +78,11 @@ return {
     },
     picker = {
       layout = "ivy",
+      sources = {
+        files = { hidden = true },
+        explorer = { hidden = true },
+        grep = { hidden = true },
+      },
       win = {
         input = {
           keys = {
