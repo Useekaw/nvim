@@ -31,15 +31,23 @@ Personal Neovim configuration (fork of [Allaman/nvim](https://github.com/Allaman
   (std `lua54+vim`, `mixed_table` allowed). Run `selene lua/`.
 - **Markdown:** [markdownlint](https://github.com/DavidAnson/markdownlint), config in
   `.markdownlint.yaml` (long lines and inline HTML allowed).
+- **Shell (`sh`/`bash`):** `bashls` (LSP, `lsp.lua`), `shfmt` (formatting via conform.nvim,
+  `editing.lua`), `shellcheck` (linting via nvim-lint, `coding.lua`).
+- CLI access to `stylua`/`selene` for this workspace is provided via [mise](https://mise.jdx.dev)
+  (`mise.toml`); run them with `mise exec -- stylua ...` / `mise exec -- selene ...`, or `mise
+  install` once to put shims on `PATH`.
 - Keep plugin specs grouped by feature/domain, matching the existing files in
   `lua/vnext/plugins/`.
 - When adding/changing a keymap: register it in the appropriate which-key group in
   `lua/vnext/plugins/which-key.lua` and document it in the corresponding table in `README.md`.
-- **Tool installation:** never install LSP servers/linters/formatters ad-hoc. Prefer
-  [Mason](https://github.com/mason-org/mason.nvim) — add the tool to the relevant
-  `ensure_installed` list in `lua/vnext/plugins/mason.lua`. If a tool is not available via Mason,
-  it is installed through Homebrew, but the Brewfile and that tool's configuration are managed
-  outside this repo (via chezmoi) — do not add Homebrew/Brewfile logic here.
+- **Tool installation:** never install LSP servers/linters/formatters ad-hoc.
+  - Prefer [Mason](https://github.com/mason-org/mason.nvim) — add the tool to the relevant
+    `ensure_installed` list in `lua/vnext/plugins/mason.lua`.
+  - Workspace-only CLI tools needed for editing this repo (e.g. `stylua`, `selene`) go into
+    `mise.toml` via `mise use <tool>`.
+  - Tools not available via Mason or mise that are needed system-wide (e.g. `shellcheck`) are
+    installed through Homebrew, but the Brewfile and that tool's configuration are managed
+    outside this repo (via chezmoi) — do not add Homebrew/Brewfile logic here.
 
 ## Build / Test
 

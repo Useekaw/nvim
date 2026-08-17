@@ -9,6 +9,7 @@ return {
         javascript = { "oxlint" },
         lua = { "selene" },
         markdown = { "markdownlint-cli2" },
+        sh = { "shellcheck" },
         terraform = { "tflint" },
         yaml = { "yamllint" },
         ["yaml.ansible"] = { "ansible_lint" },
