@@ -68,9 +68,10 @@ api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   end,
 })
 
--- detect ansible yaml files so ansiblels attaches instead of / alongside yamlls
+-- detect filetypes that Neovim cannot infer from their standard extension/name
 vim.filetype.add({
   pattern = {
+    [".*%.Jenkinsfile"] = "groovy",
     [".*/playbooks/.*%.ya?ml"] = "yaml.ansible",
     [".*/roles/.*/tasks/.*%.ya?ml"] = "yaml.ansible",
     [".*/roles/.*/handlers/.*%.ya?ml"] = "yaml.ansible",
