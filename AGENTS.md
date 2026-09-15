@@ -28,9 +28,11 @@ Personal Neovim configuration (fork of [Allaman/nvim](https://github.com/Allaman
   `.stylua.toml` (2-space indent, Unix line endings, prefer double quotes). Run `stylua .` before
   committing Lua changes.
 - **Linting (Lua):** [selene](https://github.com/Kampfkarren/selene), config in `selene.toml`
-  (std `lua54+vim`, `mixed_table` allowed). Run `selene lua/`.
+  (std `lua51+vim`; `mixed_table` and `multiple_statements` allowed). Run `selene lua/`.
 - **Markdown:** [markdownlint](https://github.com/DavidAnson/markdownlint), config in
-  `.markdownlint.yaml` (long lines and inline HTML allowed).
+  `.markdownlint.yaml` (long lines and inline HTML allowed). `markdownlint-cli2` is installed via
+  Mason (`lua/vnext/plugins/mason.lua`); outside Neovim, run it from
+  `~/.local/share/nvim/mason/bin/markdownlint-cli2` unless Mason's `bin` directory is on `PATH`.
 - **Shell (`sh`/`bash`):** `bashls` (LSP, `lsp.lua`), `shfmt` (formatting via conform.nvim,
   `editing.lua`), `shellcheck` (linting via nvim-lint, `coding.lua`).
 - CLI access to `stylua`/`selene` for this workspace is provided via [mise](https://mise.jdx.dev)
