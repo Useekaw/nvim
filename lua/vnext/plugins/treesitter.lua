@@ -16,6 +16,7 @@ return {
       "css",
       "dockerfile",
       "go",
+      "groovy",
       "hcl",
       "html",
       "java",
