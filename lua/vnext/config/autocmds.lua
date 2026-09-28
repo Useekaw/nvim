@@ -70,8 +70,12 @@ api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 
 -- detect filetypes that Neovim cannot infer from their standard extension/name
 vim.filetype.add({
+  filename = {
+    ["Jenkinsfile"] = "groovy",
+  },
   pattern = {
     [".*%.Jenkinsfile"] = "groovy",
+    ["Jenkinsfile%..*"] = "groovy",
     [".*/playbooks/.*%.ya?ml"] = "yaml.ansible",
     [".*/roles/.*/tasks/.*%.ya?ml"] = "yaml.ansible",
     [".*/roles/.*/handlers/.*%.ya?ml"] = "yaml.ansible",
