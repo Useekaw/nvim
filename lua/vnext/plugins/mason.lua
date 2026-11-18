@@ -10,7 +10,17 @@ return {
       "neovim/nvim-lspconfig",
     },
     opts = {
-      ensure_installed = { "ansiblels", "yamlls" },
+      ensure_installed = {
+        "ansiblels",
+        "bashls",
+        "dockerls",
+        "gopls",
+        "lua_ls",
+        "marksman",
+        "pyright",
+        "taplo",
+        "yamlls",
+      },
       -- lsp.lua already handles vim.lsp.config/vim.lsp.enable for every entry
       -- in the `servers` table, so let mason-lspconfig only take care of
       -- installing the binaries and keep enabling centralized there.
@@ -22,7 +32,19 @@ return {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     dependencies = { "mason-org/mason.nvim" },
     opts = {
-      ensure_installed = { "ansible-lint", "markdownlint-cli2", "oxfmt" },
+      ensure_installed = {
+        "ansible-lint",
+        "dockerfmt",
+        "gofumpt",
+        "goimports",
+        "golangci-lint",
+        "isort",
+        "markdownlint-cli2",
+        "oxfmt",
+        "ruff",
+        "shfmt",
+        "yamlfmt",
+      },
     },
   },
 }
