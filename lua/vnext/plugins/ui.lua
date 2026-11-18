@@ -1,6 +1,5 @@
 return {
 
-  { "nvim-lua/plenary.nvim", lazy = true },
   { "MunifTanjim/nui.nvim", lazy = true },
 
   {
@@ -110,21 +109,6 @@ return {
           enabled = true,
         },
       },
-    },
-  },
-
-  {
-    "mistweaverco/kulala.nvim",
-    keys = {
-      { "<leader>Hs", desc = "Send request" },
-      { "<leader>Ha", desc = "Send all requests" },
-      { "<leader>Hb", desc = "Open scratchpad" },
-    },
-    ft = { "http", "rest" },
-    opts = {
-      global_keymaps = true,
-      global_keymaps_prefix = "<leader>H",
-      kulala_keymaps_prefix = "",
     },
   },
 

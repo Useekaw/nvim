@@ -13,7 +13,6 @@ return {
       -- log_level = vim.log.levels.TRACE,
       formatters_by_ft = {
         dockerfile = { "dockerfmt" },
-        http = { "kulala-fmt" },
         go = { "goimports", "gofumpt" },
         javascript = { "oxfmt" },
         json = { "oxfmt" },
@@ -102,7 +101,6 @@ return {
     {
       "folke/todo-comments.nvim",
       event = "BufReadPre", -- needed to highlight keywords
-      dependencies = { "nvim-lua/plenary.nvim" },
       opts = {
         highlight = {
           multiline = false, -- I usually only want one line to be highlighted

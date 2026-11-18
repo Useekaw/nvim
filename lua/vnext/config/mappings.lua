@@ -11,9 +11,6 @@ map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true })
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
--- Unmap history of commands
-map("n", "Q", "q", { noremap = true })
-
 -- Cancel search highlighting with ESC
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Clear hlsearch and ESC" })
 
@@ -62,18 +59,6 @@ vim.api.nvim_create_autocmd("FileType", {
   callback = function(args)
     map("n", "<leader>x", ":.lua<cr>", { desc = "Source current line", buffer = args.buf })
     map("v", "<leader>x", ":lua<cr>", { desc = "Source current range", buffer = args.buf })
-  end,
-})
-
--- diffmode mappings
-vim.api.nvim_create_autocmd({ "BufWinEnter", "WinEnter" }, {
-  callback = function(args)
-    if vim.wo.diff then
-      vim.keymap.set("n", "<leader>j", "]c", { buffer = args.buf, desc = "Next change" })
-      vim.keymap.set("n", "<leader>k", "[c", { buffer = args.buf, desc = "Prev change" })
-      vim.keymap.set("n", "<leader>co", "do", { buffer = args.buf, desc = "Change from other (obtain)" })
-      vim.keymap.set("n", "<leader>cp", "dp", { buffer = args.buf, desc = "Change to other (put)" })
-    end
   end,
 })
 

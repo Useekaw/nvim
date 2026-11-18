@@ -3,6 +3,7 @@ local o = vim.opt
 vim.g.autoformat = true -- global var for toggling autoformat
 
 -- stylua: ignore start
+o.autoread       = true                                            -- auto reload a file modified outside of Neovim
 o.clipboard      = "unnamedplus"                                   -- keep in sync with the system clipboard
 o.cursorline     = true                                            -- highlight the current line
 o.dir            = vim.fn.stdpath("data") .. "/swp"                -- swap file directory
@@ -11,7 +12,7 @@ o.diffopt        = "internal,filler,closeoff,linematch:60"         -- improve di
 o.fillchars      = "eob: ,fold: ,foldopen:,foldsep: ,foldclose:" -- hide ~ at the end of buffer and set fold symbols
 o.foldenable = true                                                -- enable folding
 o.foldmethod = "expr"
-o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+o.foldexpr = "v:lua.vim.treesitter.foldexpr()" -- TODO(0.13): upstream uses a Lua function here
 o.foldlevel = 99
 o.foldlevelstart = -1                                               -- top level folds only are closed by default
 o.foldnestmax = 4                                                  -- max level of folds
