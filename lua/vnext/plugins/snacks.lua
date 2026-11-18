@@ -69,7 +69,11 @@ return {
       animate = { enabled = false }, -- do not animate - feels slow for me
     },
     image = {
-      enabled = false, -- no terminal graphics protocol (kitty/ghostty) available
+      enabled = true,
+      doc = {
+        -- don't render images in e.g. markdown
+        enabled = false,
+      },
     },
     input = { enabled = true },
     notifier = {

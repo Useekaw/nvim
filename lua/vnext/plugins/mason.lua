@@ -40,6 +40,7 @@ return {
         "golangci-lint",
         "isort",
         "markdownlint-cli2",
+        "mmdc",
         "oxfmt",
         "ruff",
         "shfmt",

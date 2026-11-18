@@ -27,6 +27,14 @@ return {
     end,
   },
   {
+    "folke/snacks.nvim",
+    opts = {
+      -- upstream turns inline rendering off; ghostty supports the kitty
+      -- graphics protocol, so show images and mermaid diagrams in markdown
+      image = { doc = { enabled = true } },
+    },
+  },
+  {
     "stevearc/conform.nvim",
     opts = function(_, opts)
       for _, ft in ipairs(disabled_formatter_fts) do
