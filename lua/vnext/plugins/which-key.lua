@@ -14,7 +14,6 @@ return {
       { "<leader>d", group = "Diagnostic" },
       { "<leader>f", group = "Files" },
       { "<leader>g", group = "Git" },
-      { "<leader>H", group = "HTTP" },
       { "<leader>l", group = "LSP" },
       { "<leader>m", group = "Misc" },
       { "<leader>s", group = "Search" },

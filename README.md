@@ -23,7 +23,6 @@ which-key groups defined in `lua/vnext/plugins/which-key.lua`. Run
 | --- | --- | --- |
 | `j` / `k` | n | Move by display line (respects wrap) |
 | `<` / `>` | v | Indent/dedent, keep selection |
-| `Q` | n | `q` (repeat last `:` command) |
 | `<esc>` | i, n | Clear search highlight |
 | `<CR>` | n | Toggle fold under cursor (or default `<CR>` in quickfix) |
 | `<leader>z` | n | Cycle fold levels |
@@ -109,8 +108,7 @@ which-key groups defined in `lua/vnext/plugins/which-key.lua`. Run
 | `gD` | Open CodeDiff |
 | `gB` | Git blame line |
 | `go` / `gc` | Open / copy git link (n, v) |
-| `gs` / `gS` | Stage hunk / stage buffer |
-| `gu` | Undo stage hunk |
+| `gs` / `gS` | Stage/unstage hunk (n, v) / stage buffer |
 | `gr` / `gR` | Reset hunk / reset buffer |
 | `gp` | Preview hunk |
 | `gd` | Show deleted (inline) |
@@ -159,28 +157,6 @@ which-key groups defined in `lua/vnext/plugins/which-key.lua`. Run
 | `uq` | Quickfix window |
 | `uZ` / `uz` | Zen mode / zoom |
 
-### HTTP client (`.http`/`.rest` files) — `<leader>H`
-
-| Key | Action |
-| --- | --- |
-| `Hs` | Send request |
-| `Ha` | Send all requests |
-| `Hb` | Open scratchpad |
-
-### AI / Sidekick CLI — `<leader>a`
-
-| Key | Mode | Action |
-| --- | --- | --- |
-| `<c-.>` | n, t, i, x | Toggle Sidekick |
-| `aa` | n | Toggle CLI |
-| `as` | n | Select CLI tool |
-| `ad` | n | Detach CLI session |
-| `at` | n, x | Send "this" |
-| `af` | n | Send file |
-| `av` | x | Send visual selection |
-| `ap` | n, x | Select prompt |
-| `ac` | n | Toggle Claude directly |
-
 ### Misc
 
 | Key | Action |
@@ -198,8 +174,6 @@ which-key groups defined in `lua/vnext/plugins/which-key.lua`. Run
 | Key | Context | Action |
 | --- | --- | --- |
 | `<leader>x` (n/v) | `lua` files | Source current line / range |
-| `<leader>j` / `<leader>k` | diff mode | Next / previous change |
-| `<leader>co` / `<leader>cp` | diff mode | Obtain / put change |
 | `q` | help, qf, query, man, grug-far | Close window |
 | `<C-h>` | insert mode (LuaSnip) | Cycle snippet choice |
 
