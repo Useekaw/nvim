@@ -5,7 +5,7 @@ Personal Neovim configuration (fork of [Allaman/nvim](https://github.com/Allaman
 
 ## Structure
 
-- `init.lua` — entry point; sets `<leader>`/`<localleader>`, python host, disables perl/ruby
+- `init.lua` — entry point; sets `<leader>`/`<localleader>`, disables the node/perl/python3/ruby
   providers, then `require("vnext.config")`.
 - `lua/vnext/config/` — core config, loaded in this order (see `config/init.lua`):
   `options.lua`, `lazy.lua` (bootstraps lazy.nvim and loads plugin specs), `autocmds.lua`,
